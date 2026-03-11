@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 streamlit
 scikit-learn
 numpy
 pandas
+=======
+pandas
+numpy
+scikit-learn
+streamlit
+>>>>>>> 23c26cd (updated model training)

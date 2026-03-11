@@ -19,3 +19,8 @@ class Insurance_prediction:
         result = self.model.predict(scaled_input)
 
         return result[0]
+<<<<<<< HEAD
+=======
+    
+        print(self.scaler.n_features_in_)
+>>>>>>> 23c26cd (updated model training)
