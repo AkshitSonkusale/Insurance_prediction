@@ -1,20 +1,27 @@
 import pickle
 import numpy as np
+import os
 
 class Insurance_prediction:
 
     def __init__(self):
-        with open("artifacts/scaler.pkl","rb") as f:
+
+        base_dir = os.path.dirname(os.path.dirname(__file__))
+
+        scaler_path = os.path.join(base_dir, "artifacts", "scaler.pkl")
+        model_path = os.path.join(base_dir, "artifacts", "model.pkl")
+
+        with open(scaler_path, "rb") as f:
             self.scaler = pickle.load(f)
 
-        with open("artifacts/model.pkl","rb") as f:
+        with open(model_path, "rb") as f:
             self.model = pickle.load(f)
 
     def prediction(self, Age, Annual_Income_LPA, Policy_Term_Years, Sum_Assured_Lakhs):
 
-        input = np.array([[Age, Annual_Income_LPA, Policy_Term_Years, Sum_Assured_Lakhs]])
+        input_data = np.array([[Age, Annual_Income_LPA, Policy_Term_Years, Sum_Assured_Lakhs]])
 
-        scaled_input = self.scaler.transform(input)
+        scaled_input = self.scaler.transform(input_data)
 
         result = self.model.predict(scaled_input)
 
