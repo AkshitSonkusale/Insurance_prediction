@@ -10,7 +10,7 @@ data=pd.read_csv("../data/raw/insurance_data.csv")
 
 # 2
 def load_and_split_data():
-    x=data[['Age','Annual_Income_LPA','Policy_Term_Years','Sum_Assured_Lakhs','Annual_Premium_Thousands']]
+    x=data[['Age','Annual_Income_LPA','Policy_Term_Years','Sum_Assured_Lakhs']]
     y=data['Annual_Premium_Thousands']
     print(x)
     print(y)
